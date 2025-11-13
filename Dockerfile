@@ -15,10 +15,24 @@ RUN apt-get update && apt-get install -y wget gnupg curl unzip \
 
 
 # Copiar el JAR a la imagen
-COPY target/selenium-rag-api-0.0.1-SNAPSHOT.jar app.jar
+#COPY target/selenium-rag-api-0.0.1-SNAPSHOT.jar app.jar
 
-# Exponer el puerto de Spring Boot
+# Directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiar los archivos de proyecto
+COPY pom.xml .
+COPY src ./src
+
+# Compilar el proyecto y generar el jar
+RUN mvn clean package -DskipTests
+
+
+# Copiar el jar compilado desde la fase build
+COPY --from=build /app/target/*.jar app.jar
+
+# Puerto que expone la app
 EXPOSE 80
 
 # Comando para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
