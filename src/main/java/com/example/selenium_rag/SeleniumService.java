@@ -13,10 +13,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SeleniumService {
+    @Autowired DiccionarioRepository diccionarioRepository;
     
     public ArrayList<String> findWordsRag(ArrayList<String> searchedWords) throws Exception {
         WebDriver driver = null;
@@ -94,7 +96,10 @@ public class SeleniumService {
                 }
                 // if (driver != null)
                 // driver.quit();
+                diccionarioRepository.save(
+                    new Diccionario (null, searchedWord, respostas.get(respostas.size()-1)));            
             }
+
             return respostas;
         } catch (Exception e) {
             e.printStackTrace();

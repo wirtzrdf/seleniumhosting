@@ -22,6 +22,9 @@ public class SeleniumController {
     @PostMapping("/findWords")
     public ArrayList<String> findWords(@RequestBody ArrayList<String> words) {
         try {
+           
+
+
             return seleniumService.findWordsRag(words);
         } catch (Exception ex) {
             throw new ResponseStatusException(
