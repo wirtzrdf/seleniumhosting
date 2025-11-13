@@ -29,7 +29,7 @@ RUN mvn clean package -DskipTests
 
 
 # Copiar el jar compilado desde la fase build
-COPY --from=build /app/target/*.jar app.jar
+COPY target/selenium-rag-api-0.0.1-SNAPSHOT.jar app.jar
 
 # Puerto que expone la app
 EXPOSE 80
