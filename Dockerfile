@@ -35,7 +35,7 @@ RUN mvn clean package -DskipTests
 # Fase 2: Build
 # ==========================
 
-FROM maven:3.9.5-eclipse-temurin-21 AS build
+FROM maven:3.9.5-eclipse-temurin-21
 
 # Instalar dependencias y repositorio de Google Chrome
 # RUN apt-get update && apt-get install -y wget gnupg curl unzip \
