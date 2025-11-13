@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
+
 public class SeleniumController {
 
     private final SeleniumService seleniumService;
@@ -19,13 +20,15 @@ public class SeleniumController {
         this.seleniumService = seleniumService;
     }
 
-    @GetMapping("/")
+@GetMapping("/")
     public ResponseEntity<String>healthcheck() {
         return ResponseEntity.ok("Selenium Service is running");
     }
 
 
     @PostMapping("/api/findWords")
+
+
     public ArrayList<String> findWords(@RequestBody ArrayList<String> words) {
         try {
            

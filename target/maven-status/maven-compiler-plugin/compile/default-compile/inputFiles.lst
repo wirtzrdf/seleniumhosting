@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 C:\Users\USUARIO-1\Desktop\seleniumhosting\src\main\java\com\example\selenium_rag\Diccionario.java
 C:\Users\USUARIO-1\Desktop\seleniumhosting\src\main\java\com\example\selenium_rag\DiccionarioRepository.java
 C:\Users\USUARIO-1\Desktop\seleniumhosting\src\main\java\com\example\selenium_rag\Main.java
 C:\Users\USUARIO-1\Desktop\seleniumhosting\src\main\java\com\example\selenium_rag\SeleniumController.java
 C:\Users\USUARIO-1\Desktop\seleniumhosting\src\main\java\com\example\selenium_rag\SeleniumService.java
+=======
+C:\Users\rdf\Desktop\seleniumtest\src\main\java\com\example\selenium_rag\Diccionario.java
+C:\Users\rdf\Desktop\seleniumtest\src\main\java\com\example\selenium_rag\DiccionarioRepository.java
+C:\Users\rdf\Desktop\seleniumtest\src\main\java\com\example\selenium_rag\Main.java
+C:\Users\rdf\Desktop\seleniumtest\src\main\java\com\example\selenium_rag\SeleniumController.java
+C:\Users\rdf\Desktop\seleniumtest\src\main\java\com\example\selenium_rag\SeleniumService.java
+>>>>>>> 36f3cc1 (error mysql)
