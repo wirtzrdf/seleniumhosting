@@ -37,7 +37,7 @@ RUN mvn clean package -DskipTests
 
 FROM maven:3.9.5-eclipse-temurin-21
 
-Instalar dependencias y repositorio de Google Chrome
+#Instalar dependencias y repositorio de Google Chrome
 RUN apt-get update && apt-get install -y wget gnupg curl unzip \
     && curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /etc/apt/trusted.gpg.d/google.gpg \
     && echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
