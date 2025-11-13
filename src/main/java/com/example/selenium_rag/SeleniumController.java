@@ -21,7 +21,7 @@ public class SeleniumController {
 
     @GetMapping("/")
     public ResponseEntity<String>healthcheck() {
-        return ResponseEntity.ok("Selenium RAG Service is running");
+        return ResponseEntity.ok("Selenium Service is running");
     }
 
 
