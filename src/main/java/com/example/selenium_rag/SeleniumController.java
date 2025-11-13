@@ -3,14 +3,14 @@ package com.example.selenium_rag;
 import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
-@RequestMapping("/api")
 public class SeleniumController {
 
     private final SeleniumService seleniumService;
@@ -19,7 +19,13 @@ public class SeleniumController {
         this.seleniumService = seleniumService;
     }
 
-    @PostMapping("/findWords")
+    @GetMapping("/")
+    public ResponseEntity<String>healthcheck() {
+        return ResponseEntity.ok("Selenium RAG Service is running");
+    }
+
+
+    @PostMapping("/api/findWords")
     public ArrayList<String> findWords(@RequestBody ArrayList<String> words) {
         try {
            
