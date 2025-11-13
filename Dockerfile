@@ -54,11 +54,12 @@ FROM maven:3.9.5-eclipse-temurin-21 AS build
 # Directorio de trabajo
 WORKDIR /app
 
+
 # Copiar el JAR generado desde la fase de build
 COPY --from=build /app/target/selenium-rag-api-0.0.1-SNAPSHOT.jar app.jar
 
 # Puerto que expone la app
-EXPOSE 80
+EXPOSE 80  
 
 # Comando para ejecutar la aplicación
 ENTRYPOINT ["java","-jar","app.jar"]
